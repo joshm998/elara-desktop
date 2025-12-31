@@ -1,0 +1,9 @@
+# Set background color.
+#/usr/bin/kanshi &
+waybar >/dev/null 2>&1 &
+nm-applet >/dev/null 2>&1 &
+
+mako >/dev/null 2>&1 &
+swayidle -w \
+	timeout 600 'wlopm --off \*' \
+	resume 'wlopm --on \* && /usr/bin/sleep 2 && makoctl reload' >/dev/null 2>&1 &
