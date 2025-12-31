@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Elara Desktop Metapackage
 
 License:        MIT
-URL:            https://github.com/elaraos/desktop
+URL:            https://github.com/joshm998/elara-desktop
 Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildArch:      noarch
 
