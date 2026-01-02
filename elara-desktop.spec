@@ -73,5 +73,7 @@ cp -a data/usr/share/themes/* %{buildroot}%{_datadir}/themes/
 %{_datadir}/themes
 
 %changelog
-* Tue Dec 31 2025 Josh Mangiola <contact@joshmangiola.com> - 1.0.0-1
+* Fri Jan 1 2026 Josh Mangiola <contact@joshmangiola.com> - 1.0.1-1
+- Adds Waybar config and fixes issues on Asahi
+* Wed Dec 31 2025 Josh Mangiola <contact@joshmangiola.com> - 1.0.0-1
 - Initial release
