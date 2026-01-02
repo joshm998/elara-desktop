@@ -2,6 +2,7 @@
 #/usr/bin/kanshi &
 waybar >/dev/null 2>&1 &
 nm-applet >/dev/null 2>&1 &
+exec pacat >/dev/null 2>&1 &
 
 mako >/dev/null 2>&1 &
 swayidle -w \

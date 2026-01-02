@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
-  This file contains all supported config elements & attributes with
-  default values.
+This file contains all supported config elements & attributes with
+default values.
 -->
 <labwc_config>
   <core>
@@ -35,69 +35,63 @@
     <range>1</range>
     <topMaximize>yes</topMaximize>
   </snapping>
-    <desktops>
-      <popupTime>1000</popupTime>
-      <names>
-        <name>Workspace 1</name>
-        <name>Workspace 2</name>
-        <name>Workspace 3</name>
-        <name>Workspace 4</name>
-      </names>
-    </desktops>
-<!--
-    Or it can also be configured like this:
-    <desktops number="4" />
-
-    popupTime defaults to 1000 so could be left out.
-    Set to 0 to completely disable the workspace OSD.
-
-    Use GoToDesktop left | right to switch workspaces.
-    Use SendToDesktop left | right to move windows.
-    See man labwc-actions for further information.
-  -->
   <desktops>
     <popupTime>1000</popupTime>
     <names>
-      <name>Default</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
   </desktops>
   <!--
-    <margin> can be used to reserve space where new/maximized/tiled
-    windows will not be placed. Clients using layer-shell protocol reserve
-    space automatically, so <margin> is only intended for other, specialist
-    cases.
+  Or it can also be configured like this:
+  <desktops number="4" />
 
-    If output is left empty, the margin will be applied to all outputs.
+  popupTime defaults to 1000 so could be left out.
+  Set to 0 to completely disable the workspace OSD.
 
-    <margin top="" bottom="" left="" right="" output="" />
+  Use GoToDesktop left | right to switch workspaces.
+  Use SendToDesktop left | right to move windows.
+  See man labwc-actions for further information.
+  -->
+  <!--
+  <margin> can be used to reserve space where new/maximized/tiled
+  windows will not be placed. Clients using layer-shell protocol reserve
+  space automatically, so <margin> is only intended for other, specialist
+  cases.
+
+  If output is left empty, the margin will be applied to all outputs.
+
+  <margin top="" bottom="" left="" right="" output="" />
   -->
   <!-- Percent based regions based on output usable area, % char is required -->
   <!--
-    <regions>
-      <region name="top-left"     x="0%"  y="0%"  height="50%"  width="50%"  />
-      <region name="top"          x="0%"  y="0%"  height="50%"  width="100%" />
-      <region name="top-right"    x="50%" y="0%"  height="50%"  width="50%"  />
-      <region name="left"         x="0%"  y="0%"  height="100%" width="50%"  />
-      <region name="center"       x="10%" y="10%" height="80%"  width="80%"  />
-      <region name="right"        x="50%" y="0%"  height="100%" width="50%"  />
-      <region name="bottom-left"  x="0%"  y="50%" height="50%"  width="50%"  />
-      <region name="bottom"       x="0%"  y="50%" height="50%"  width="100%" />
-      <region name="bottom-right" x="50%" y="50%" height="50%"  width="50%"  />
-    </regions>
+  <regions>
+  <region name="top-left"     x="0%"  y="0%"  height="50%"  width="50%"  />
+  <region name="top"          x="0%"  y="0%"  height="50%"  width="100%" />
+  <region name="top-right"    x="50%" y="0%"  height="50%"  width="50%"  />
+  <region name="left"         x="0%"  y="0%"  height="100%" width="50%"  />
+  <region name="center"       x="10%" y="10%" height="80%"  width="80%"  />
+  <region name="right"        x="50%" y="0%"  height="100%" width="50%"  />
+  <region name="bottom-left"  x="0%"  y="50%" height="50%"  width="50%"  />
+  <region name="bottom"       x="0%"  y="50%" height="50%"  width="100%" />
+  <region name="bottom-right" x="50%" y="50%" height="50%"  width="50%"  />
+  </regions>
   -->
   <!--
-    Keybind actions are specified in labwc-actions(5)
-    The following keybind modifiers are supported:
-      W - window/super/logo
-      A - alt
-      C - ctrl
-      S - shift
+  Keybind actions are specified in labwc-actions(5)
+  The following keybind modifiers are supported:
+  W - window/super/logo
+  A - alt
+  C - ctrl
+  S - shift
 
-    Use <keyboard><default /> to load all the default keybinds (those listed
-    below). If the default keybinds are largely what you want, a sensible
-    approach could be to start the <keyboard> section with a <default />
-    element, and then (re-)define any special binds you need such as launching
-    your favourite terminal or application launcher. See rc.xml for an example.
+  Use <keyboard><default /> to load all the default keybinds (those listed
+  below). If the default keybinds are largely what you want, a sensible
+  approach could be to start the <keyboard> section with a <default />
+  element, and then (re-)define any special binds you need such as launching
+  your favourite terminal or application launcher. See rc.xml for an example.
   -->
   <keyboard>
     <repeatRate>25</repeatRate>
@@ -110,9 +104,6 @@
           <action name="Unshade"/>
         </finalactions>
       </action>
-    </keybind>
-    <keybind key="A-Tab">
-      <action name="Execute" command="/home/ryne/.bin/switcher6"/>
     </keybind>
     <keybind key="S-A-c">
       <action name="MoveTo">
@@ -161,11 +152,8 @@
     <keybind key="A-Return">
       <action name="ToggleMaximize"/>
     </keybind>
-    <keybind key="A-m">
-      <action name="Iconify"/>
-    </keybind>
     <keybind key="A-Space">
-      <action name="Execute" command="wofi --show drun"/>
+      <action name="Execute" command="elara-launcher"/>
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
       <action name="Execute" command="amixer sset Master 2%-"/>
@@ -205,18 +193,18 @@
     <keybind key="W-KP_1"><action name="SnapToRegion" region="bottom-left" /></keybind>
     <keybind key="W-KP_2"><action name="SnapToRegion" region="bottom" /></keybind>
     <keybind key="W-KP_3"><action name="SnapToRegion" region="bottom-right" /></keybind>
-  -->
+    -->
   </keyboard>
   <!--
-    Multiple <mousebind> can exist within one <context>
-    Multiple <actions> can exist within one <mousebind>
-    Currently, the only openbox-action not supported is "Unshade"
+  Multiple <mousebind> can exist within one <context>
+  Multiple <actions> can exist within one <mousebind>
+  Currently, the only openbox-action not supported is "Unshade"
 
-    Use <mouse><default /> to load all the default mousebinds (those listed
-    below). If the default mousebinds are largely what you want, a sensible
-    approach could be to start the <mouse> section with a <default />
-    element, and then (re-)define any special binds you need such as launching
-    a custom menu when right-clicking on your desktop. See rc.xml for an example.
+  Use <mouse><default /> to load all the default mousebinds (those listed
+  below). If the default mousebinds are largely what you want, a sensible
+  approach could be to start the <mouse> section with a <default />
+  element, and then (re-)define any special binds you need such as launching
+  a custom menu when right-clicking on your desktop. See rc.xml for an example.
   -->
   <mouse>
     <!-- time is in ms -->
@@ -338,7 +326,7 @@
     </context>
     <context name="Root">
       <!--      <mousebind button="Left" action="Press">
-        <action name="ShowMenu" menu="root-menu"/>
+      <action name="ShowMenu" menu="root-menu"/>
       </mousebind>-->
       <mousebind button="Right" action="Press">
         <action name="ShowMenu" menu="root-menu"/>
@@ -349,17 +337,17 @@
     </context>
   </mouse>
   <!--
-    The *category* element can be set to touch, non-touch, default or the name
-    of a device. You can obtain device names by running *libinput list-devices*
-    as root or member of the input group.
+  The *category* element can be set to touch, non-touch, default or the name
+  of a device. You can obtain device names by running *libinput list-devices*
+  as root or member of the input group.
 
-    Tap is set to *yes* be default. All others are left blank in order to use
-    device defaults.
+  Tap is set to *yes* be default. All others are left blank in order to use
+  device defaults.
 
-    All values are [yes|no] except for:
-      - pointerSpeed [-1.0 to 1.0]
-      - accelProfile [flat|adaptive]
-      - tapButtonMap [lrm|lmr]
+  All values are [yes|no] except for:
+  - pointerSpeed [-1.0 to 1.0]
+  - accelProfile [flat|adaptive]
+  - tapButtonMap [lrm|lmr]
   -->
   <tablet mouseEmulation="off"/>
   <libinput>
@@ -375,46 +363,42 @@
     </device>
   </libinput>
   <!--
-    # Window Rules
-    #   - Criteria can consist of 'identifier' or 'title' or both (in which case
-    #     AND logic is used).
-    #   - 'identifier' relates to app_id for native Wayland windows and WM_CLASS
-    #     for XWayland clients.
-    #   - Criteria can also contain `matchOnce="true"` meaning that the rule
-    #     must only apply to the first instance of the window with that
-    #     particular 'identifier' or 'title'.
-    #   - Matching against patterns with '*' (wildcard) and '?' (joker) is
-    #     supported. Pattern matching is case-insensitive.
+  # Window Rules
+  #   - Criteria can consist of 'identifier' or 'title' or both (in which case
+  #     AND logic is used).
+  #   - 'identifier' relates to app_id for native Wayland windows and WM_CLASS
+  #     for XWayland clients.
+  #   - Criteria can also contain `matchOnce="true"` meaning that the rule
+  #     must only apply to the first instance of the window with that
+  #     particular 'identifier' or 'title'.
+  #   - Matching against patterns with '*' (wildcard) and '?' (joker) is
+  #     supported. Pattern matching is case-insensitive.
 
-    <windowRules>
-      <windowRule identifier="*"><action name="Maximize"/></windowRule>
-      <windowRule identifier="foo" serverDecoration="yes"/>
-      <windowRule title="bar" serverDecoration="yes"/>
-      <windowRule identifier="baz" title="quax" serverDecoration="yes"/>
-    </windowRules>
+  <windowRules>
+  <windowRule identifier="*"><action name="Maximize"/></windowRule>
+  <windowRule identifier="foo" serverDecoration="yes"/>
+  <windowRule title="bar" serverDecoration="yes"/>
+  <windowRule identifier="baz" title="quax" serverDecoration="yes"/>
+  </windowRules>
 
-    # Example below for `lxqt-panel` and `pcmanfm-qt \-\-desktop`
-    # where 'matchOnce' is used to avoid applying rule to the panel configuration
-    # window with the same 'app_id'
+  # Example below for `lxqt-panel` and `pcmanfm-qt \-\-desktop`
+  # where 'matchOnce' is used to avoid applying rule to the panel configuration
+  # window with the same 'app_id'
 
-    <windowRules>
-      <windowRule identifier="lxqt-panel" matchOnce="true">
-        <skipTaskbar>yes</skipTaskbar>
-        <action name="MoveTo" x="0" y="0" />
-        <action name="ToggleAlwaysOnTop"/>
-      </windowRule>
-      <windowRule title="pcmanfm-desktop*">
-        <skipTaskbar>yes</skipTaskbar>
-        <skipWindowSwitcher>yes</skipWindowSwitcher>
-        <action name="MoveTo" x="0" y="0" />
-        <action name="ToggleAlwaysOnBottom"/>
-      </windowRule>
-    </windowRules>
+  <windowRules>
+  <windowRule identifier="lxqt-panel" matchOnce="true">
+  <skipTaskbar>yes</skipTaskbar>
+  <action name="MoveTo" x="0" y="0" />
+  <action name="ToggleAlwaysOnTop"/>
+  </windowRule>
+  <windowRule title="pcmanfm-desktop*">
+  <skipTaskbar>yes</skipTaskbar>
+  <skipWindowSwitcher>yes</skipWindowSwitcher>
+  <action name="MoveTo" x="0" y="0" />
+  <action name="ToggleAlwaysOnBottom"/>
+  </windowRule>
+  </windowRules>
   -->
   <windowRules>
-    <windowRule identifier="mpv" matchOnce="false" serverDecoration="no"/>
-    <windowRule identifier="steam_app_*" matchOnce="false" serverDecoration="no"/>
-    <windowRule identifier="gamescope" matchOnce="false" serverDecoration="no"/>
-    <windowRule identifier="imv" matchOnce="false" serverDecoration="yes"/>
   </windowRules>
 </labwc_config>
